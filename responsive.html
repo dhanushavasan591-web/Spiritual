@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Spiritual Guidance</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Fade Up Animation */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeUp {
+      animation: fadeUp 1s ease-out forwards;
+    }
+
+    /* Angel Flying Animation */
+    @keyframes fly {
+      0% {
+        transform: translateY(0px) translateX(0px);
+      }
+
+      25% {
+        transform: translateY(-20px) translateX(10px);
+      }
+
+      50% {
+        transform: translateY(0px) translateX(20px);
+      }
+
+      75% {
+        transform: translateY(-15px) translateX(10px);
+      }
+
+      100% {
+        transform: translateY(0px) translateX(0px);
+      }
+    }
+
+    .animate-fly {
+      animation: fly 6s ease-in-out infinite;
+    }
+  </style>
+  <!-- 2nd content  -->
+  <style>
+    /* Floating & Drifting Effects */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(-2deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(2deg);
+      }
+    }
+
+    @keyframes drift {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(30px, 20px);
+      }
+    }
+
+    .animate-float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .animate-drift {
+      animation: drift 10s ease-in-out infinite;
+    }
+
+    /* Entrance Animations */
+    @keyframes textReveal {
+      from {
+        opacity: 0;
+        transform: translateY(40px) skewY(2deg);
+        filter: blur(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) skewY(0);
+        filter: blur(0);
+      }
+    }
+
+    .reveal-text {
+      opacity: 0;
+      animation: textReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    }
+
+    .reveal-up {
+      opacity: 0;
+      animation: textReveal 1s ease-out forwards;
+    }
+
+    /* Staggered Image Group Reveal */
+    .reveal-group div {
+      opacity: 0;
+      animation: textReveal 1.5s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    }
+
+    .reveal-group div:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .reveal-group div:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .reveal-group div:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+  </style>
+  <!-- 3rd content -->
+  <style>
+    /* 1. SECTION ENTRANCE (When you scroll in) */
+    @keyframes cardEntrance {
+      0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(40px);
+        filter: blur(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    .card-entry {
+      opacity: 0;
+      animation: cardEntrance 1s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+      animation-delay: var(--delay);
+    }
+
+    /* 2. TEXT REVEAL */
+    @keyframes textSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal-text {
+      display: inline-block;
+      animation: textSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* 3. INTERACTIVE "EXIT" ANIMATION */
+    /* This ensures that when the mouse LEAVES, it smooths back out */
+    .group {
+      will-change: transform, box-shadow;
+      backface-visibility: hidden;
+    }
+
+    /* Hover Shine Effect */
+    .group::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 2.5rem;
+      background: radial-gradient(600px circle at var(--x) var(--y), rgba(56, 189, 248, 0.1), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+
+    .group:hover::after {
+      opacity: 1;
+    }
+  </style>
+  <!-- 4th contetn -->
+  <style>
+    /* 1. PILLAR REVEAL ANIMATION */
+    @keyframes pillarEntrance {
+      0% {
+        opacity: 0;
+        transform: perspective(1000px) rotateX(-20deg) translateY(50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: perspective(1000px) rotateX(0deg) translateY(0);
+      }
+    }
+
+    .pillar-card {
+      opacity: 0;
+      animation: pillarEntrance 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+      animation-delay: var(--delay);
+    }
+
+    /* 2. HEADER SLIDE */
+    @keyframes slideLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .reveal-slide-left {
+      animation: slideLeft 1s ease-out forwards;
+    }
+
+    /* 3. LINE GROW */
+    @keyframes lineGrow {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+
+      to {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+
+    .reveal-line {
+      animation: lineGrow 2s ease-in-out forwards;
+    }
+
+    /* Smooth Exit transitions are built into the .transition-all classes */
+  </style>
+  <!-- 5th session -->
+  <style>
+    /* Entrance Animation */
+    @keyframes revealUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .reveal-card {
+      opacity: 0;
+      animation: revealUp 1s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    }
+
+    .reveal-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .reveal-card:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .reveal-card:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes bounceSlow {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-bounce-slow {
+      animation: bounceSlow 4s ease-in-out infinite;
+    }
+  </style>
+  <!-- lastsesstin -->
+  <style>
+    /* Entrance Animations */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .reveal-left {
+      animation: slideInLeft 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    }
+
+    .reveal-right {
+      animation: slideInRight 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    }
+
+    /* Custom Select Style */
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.5rem center;
+      background-size: 1.2rem;
+    }
+  </style>
+  <!-- 6th session -->
+  <style>
+    /* The Key to Infinite Loop: Move from 0% to -50% 
+       because the content is duplicated twice */
+    @keyframes infiniteScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-infinite-scroll {
+      animation: infiniteScroll 30s linear infinite;
+    }
+
+    /* To ensure cards don't shrink and stay readable */
+    .shrink-0 {
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="absolute top-0 left-0 w-full z-30 bg-black/30 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between text-white">
+      <!-- Logo -->
+      <div class="text-xl md:text-2xl font-bold tracking-wide">
+        FaithGuide
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-8 text-lg">
+        <li><a href="#" class="hover:text-yellow-300 transition">Home</a></li>
+        <li><a href="#" class="hover:text-yellow-300 transition">About</a></li>
+        <li><a href="#" class="hover:text-yellow-300 transition">Services</a></li>
+        <li><a href="#" class="hover:text-yellow-300 transition">Testimonials</a></li>
+        <li><a href="#" class="hover:text-yellow-300 transition">Contact</a></li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-2xl focus:outline-none">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-black/80 text-white px-6 pb-6">
+      <ul class="space-y-4 text-lg">
+        <li><a href="#" class="block hover:text-yellow-300">Home</a></li>
+        <li><a href="#" class="block hover:text-yellow-300">About</a></li>
+        <li><a href="#" class="block hover:text-yellow-300">Services</a></li>
+        <li><a href="#" class="block hover:text-yellow-300">Testimonials</a></li>
+        <li><a href="#" class="block hover:text-yellow-300">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-screen flex items-center justify-center px-6 md:px-16 bg-cover bg-center"
+    style="background-image: url('assests/herosection1.png');">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <!-- Flying Angel Image -->
+    <!-- <img
+        src="assests/angel.png"
+        alt="Angel"
+        class="absolute top-10 left-4 md:left-20 w-24 sm:w-32 md:w-40 animate-fly z-10" /> -->
+    <!-- Content -->
+    <div class="relative z-20 max-w-3xl text-center animate-fadeUp text-white">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+        Confidential Spiritual Guidance
+        <span class="text-yellow-300">for Your Life’s Challenges</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl">
+        Share your worries. Receive faith-based guidance rooted in Islam and
+        Christianity.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+          🟢 Share Your Problem
+        </button>
+        <button
+          class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+          🔵 Book a Private Session
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- 2nd section -->
+  <section
+    class="relative min-h-screen flex items-center px-6 md:px-20 py-24 bg-[#010a1a] overflow-hidden font-['Plus_Jakarta_Sans']">
+    <div
+      class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-sky-500/30 rounded-full blur-[140px] animate-pulse">
+    </div>
+    <div class="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px]"></div>
+
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-400 blur-[100px] animate-drift"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
+
+      <div class="grid grid-cols-2 gap-4 md:gap-8 relative reveal-group">
+
+        <div
+          class="mt-8 p-[2px] bg-gradient-to-br from-sky-400 to-transparent rounded-[2rem] shadow-[0_0_30px_rgba(56,189,248,0.2)] hover:scale-105 transition-transform duration-500">
+          <div class="bg-[#010a1a] rounded-[2rem] overflow-hidden h-48 md:h-64">
+            <img src="assests/kuran.png" class="w-full h-full object-cover opacity-80" alt="Guidance">
+          </div>
+        </div>
+
+        <div
+          class="row-span-2 p-[2px] bg-gradient-to-b from-sky-300 via-sky-500 to-blue-900 rounded-[3rem] shadow-[0_0_50px_rgba(56,189,248,0.3)]">
+          <div class="bg-[#010a1a] rounded-[3rem] overflow-hidden h-full min-h-[400px]">
+            <img src="assests/mixed.png" class="w-full h-full object-cover" alt="Reflection">
+          </div>
+        </div>
+
+        <div
+          class="p-[2px] bg-gradient-to-tr from-sky-400 to-transparent rounded-[2rem] shadow-[0_0_30px_rgba(56,189,248,0.2)] hover:scale-105 transition-transform duration-500">
+          <div class="bg-[#010a1a] rounded-[2rem] overflow-hidden h-48 md:h-64">
+            <img src="assests/whoweare.png" class="w-full h-full object-cover opacity-80" alt="Support">
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-10">
+
+        <div class="relative inline-block">
+          <div class="absolute inset-0 bg-sky-400 blur-2xl opacity-40 animate-pulse"></div>
+          <img src="assests/angel.png" class="w-20 relative animate-float" alt="Angel">
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-6xl md:text-8xl font-['Baskervville'] text-white leading-[1.1] reveal-text">
+            Who <span class="italic text-sky-300">We Are</span>
+          </h2>
+          <div class="flex items-center gap-4 reveal-text" style="animation-delay: 0.2s;">
+            <div class="h-[1px] w-12 bg-sky-400/50"></div>
+            <span class="text-sky-400 tracking-[0.4em] text-xs font-bold uppercase">Spiritual
+              Pathfinders</span>
+            <div class="h-[1px] w-12 bg-sky-400/50"></div>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-sky-100/90 text-lg md:text-xl font-light leading-relaxed">
+          <p class="reveal-up" style="animation-delay: 0.4s;">
+            We are a faith-based spiritual guidance service dedicated to
+            helping people
+            navigating <span class="text-white font-medium shadow-sky-500">difficulties,
+              confusion, or emotional pain.</span>
+          </p>
+
+          <div
+            class="reveal-up p-8 rounded-3xl bg-gradient-to-r from-sky-500/10 to-transparent border border-sky-500/20 backdrop-blur-md"
+            style="animation-delay: 0.6s;">
+            <p class="italic text-sky-200">
+              "When life feels heavy, you don’t have to face it alone. We listen without judgment and pray for your
+              clarity."
+            </p>
+          </div>
+
+          <p class="reveal-up" style="animation-delay: 0.8s;">
+            Through prayer and wisdom from the <span
+              class="text-sky-300 font-semibold uppercase text-sm tracking-widest">Holy
+              Bible</span> & <span class="text-sky-300 font-semibold uppercase text-sm tracking-widest">Holy
+              Qur’an</span>, we seek God’s light for your journey.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3rd section -->
+  <section class="relative py-24 bg-[#010a1a] overflow-hidden px-6 font-['Plus_Jakarta_Sans']">
+
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-sky-600/10 blur-[120px] rounded-full pointer-events-none">
+    </div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+
+      <div class="text-center mb-24 overflow-hidden">
+        <h2 class="reveal-text text-5xl md:text-7xl font-['Baskervville'] italic text-white mb-6">
+          How it Works
+        </h2>
+        <div class="reveal-line h-[2px] w-24 bg-gradient-to-r from-transparent via-sky-400 to-transparent mx-auto">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10 items-stretch">
+
+        <div class="card-entry group relative h-full" style="--delay: 0.1s;">
+          <div
+            class="h-full p-10 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-xl transition-all duration-500 
+                    group-hover:bg-sky-500/10 group-hover:border-sky-400/50 group-hover:-translate-y-3 group-hover:shadow-[0_20px_60px_-15px_rgba(56,189,248,0.3)]">
+
+            <div
+              class="w-16 h-16 rounded-2xl bg-sky-500/20 flex items-center justify-center mb-8 border border-sky-400/30 group-hover:rotate-[15deg] transition-transform duration-500">
+              <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Concern
+              Received</h3>
+            <p class="text-sky-100/60 leading-relaxed italic">
+              "Once your concern is received, it is carefully reviewed with sincere prayer and thoughtful
+              understanding."
+            </p>
+          </div>
+        </div>
+
+        <div class="card-entry group relative h-full" style="--delay: 0.3s;">
+          <div
+            class="h-full p-10 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-xl transition-all duration-500 
+                    group-hover:bg-sky-500/10 group-hover:border-sky-400/50 group-hover:-translate-y-3 group-hover:shadow-[0_20px_60px_-15px_rgba(56,189,248,0.3)]">
+
+            <div
+              class="w-16 h-16 rounded-2xl bg-sky-500/20 flex items-center justify-center mb-8 border border-sky-400/30 group-hover:rotate-[15deg] transition-transform duration-500">
+              <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Spiritual
+              Reflection</h3>
+            <p class="text-sky-100/60 leading-relaxed italic">
+              "Each situation is approached with patience and faith, seeking wisdom and clarity before offering any
+              guidance."
+            </p>
+          </div>
+        </div>
+
+        <div class="card-entry group relative h-full" style="--delay: 0.5s;">
+          <div
+            class="h-full p-10 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-xl transition-all duration-500 
+                    group-hover:bg-sky-500/10 group-hover:border-sky-400/50 group-hover:-translate-y-3 group-hover:shadow-[0_20px_60px_-15px_rgba(56,189,248,0.3)]">
+
+            <div
+              class="w-16 h-16 rounded-2xl bg-sky-500/20 flex items-center justify-center mb-8 border border-sky-400/30 group-hover:rotate-[15deg] transition-transform duration-500">
+              <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Grounded
+              Guidance</h3>
+            <p class="text-sky-100/60 leading-relaxed italic">
+              "Ensuring the response you receive is meaningful, responsible, and spiritually grounded."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- 4th content -->
+
+  <section class="relative py-28 bg-[#020617] overflow-hidden px-6 font-['Space_Grotesk']">
+
+    <div class="absolute inset-0 opacity-[0.05]"
+      style="background-image: linear-gradient(#38bdf8 1px, transparent 1px), linear-gradient(90deg, #38bdf8 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+        <div class="reveal-slide-left">
+          <h2 class="text-6xl md:text-8xl font-['Playfair_Display'] text-white italic leading-none mb-4">
+            Areas of <span class="text-sky-400">Support</span>
+          </h2>
+          <p class="text-sky-200/40 tracking-[0.5em] uppercase text-xs font-bold">Select
+            a category to begin</p>
+        </div>
+        <div
+          class="h-[1px] flex-grow bg-gradient-to-r from-sky-500/50 to-transparent ml-10 hidden md:block reveal-line">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <div class="pillar-card group" style="--delay: 0.1s;">
+          <div
+            class="relative h-full bg-[#030e25] border-t-4 border-t-sky-500 border-x border-x-white/5 border-b border-b-white/5 p-10 
+                    transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]
+                    group-hover:bg-sky-950/30 group-hover:-translate-y-6 group-hover:shadow-[0_20px_80px_-20px_rgba(14,165,233,0.4)]">
+
+            <span
+              class="text-sky-500/20 text-6xl font-bold absolute top-4 right-6 group-hover:text-sky-400/40 transition-colors">01</span>
+
+            <div class="mb-12 text-3xl group-hover:scale-110 transition-transform duration-500">💔</div>
+            <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Relationship<br />Struggles</h3>
+            <p class="text-sky-100/50 text-base font-light leading-relaxed">
+              Guidance for marriage, misunderstandings, and emotional healing
+              to restore harmony.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card group" style="--delay: 0.2s;">
+          <div
+            class="relative h-full bg-[#030e25] border-t-4 border-t-indigo-500 border-x border-x-white/5 border-b border-b-white/5 p-10 
+                    transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]
+                    group-hover:bg-indigo-950/30 group-hover:-translate-y-6 group-hover:shadow-[0_20px_80px_-20px_rgba(79,70,229,0.4)]">
+
+            <span
+              class="text-indigo-500/20 text-6xl font-bold absolute top-4 right-6 group-hover:text-indigo-400/40 transition-colors">02</span>
+
+            <div class="mb-12 text-3xl group-hover:scale-110 transition-transform duration-500">💼</div>
+            <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Career
+              &<br />Growth</h3>
+            <p class="text-sky-100/50 text-base font-light leading-relaxed">
+              Break through financial blocks and job stress with spiritual
+              direction and clarity.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card group" style="--delay: 0.3s;">
+          <div
+            class="relative h-full bg-[#030e25] border-t-4 border-t-sky-400 border-x border-x-white/5 border-b border-b-white/5 p-10 
+                    transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]
+                    group-hover:bg-sky-950/30 group-hover:-translate-y-6 group-hover:shadow-[0_20px_80px_-20px_rgba(56,189,248,0.4)]">
+
+            <span
+              class="text-sky-400/20 text-6xl font-bold absolute top-4 right-6 group-hover:text-sky-300/40 transition-colors">03</span>
+
+            <div class="mb-12 text-3xl group-hover:scale-110 transition-transform duration-500">🧠</div>
+            <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Anxiety
+              &<br />Peace</h3>
+            <p class="text-sky-100/50 text-base font-light leading-relaxed">
+              Quiet the mind and remove negative energy through deep,
+              faith-based reflection.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card group" style="--delay: 0.4s;">
+          <div
+            class="relative h-full bg-[#030e25] border-t-4 border-t-blue-600 border-x border-x-white/5 border-b border-b-white/5 p-10 
+                    transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]
+                    group-hover:bg-blue-900/30 group-hover:-translate-y-6 group-hover:shadow-[0_20px_80px_-20px_rgba(37,99,235,0.4)]">
+
+            <span
+              class="text-blue-600/20 text-6xl font-bold absolute top-4 right-6 group-hover:text-blue-400/40 transition-colors">04</span>
+
+            <div class="mb-12 text-3xl group-hover:scale-110 transition-transform duration-500">👨‍👩‍👧</div>
+            <h3 class="text-2xl font-bold text-white mb-6 leading-tight">Family<br />Conflicts</h3>
+            <p class="text-sky-100/50 text-base font-light leading-relaxed">
+              Resolve household tensions and bring harmony back to your
+              personal connections.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5th content -->
+
+  <section class="relative py-24 bg-[#020617] overflow-hidden px-6 font-['Outfit']">
+
+    <div class="max-w-5xl mx-auto relative">
+
+      <div class="text-center mb-20 animate-fade-in">
+        <h2 class="text-sky-400 font-extrabold tracking-[0.3em] uppercase text-sm mb-4">The Guidance Path</h2>
+        <h3 class="text-5xl md:text-7xl font-['Baskervville'] text-white mb-6">Payment Method</h3>
+        <p class="text-white text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
+          To serve you with the personal attention you deserve, we follow this simple, <span
+            class="text-sky-400 font-semibold underline decoration-sky-500/30">3-step support process</span>.
+        </p>
+      </div>
+
+      <div class="relative space-y-12">
+
+        <div class="reveal-card group">
+          <div
+            class="bg-[#0b142d] border-2 border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:border-sky-400 hover:shadow-[0_0_50px_rgba(56,189,248,0.2)]">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div
+                class="bg-sky-500 text-[#020617] px-6 py-2 rounded-full font-black text-xl tracking-tighter shrink-0">
+                STEP 01</div>
+              <div>
+                <h4 class="text-3xl md:text-4xl font-bold text-white mb-6">Share Your Concern</h4>
+                <p class="text-sky-300 text-xl md:text-2xl mb-8 leading-relaxed font-medium">
+                  Reach out via <span class="text-white font-bold">WhatsApp</span> or <span
+                    class="text-white font-bold">Email</span>. Clearly tell us what you're facing and how long you've
+                  been struggling.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="bg-white/5 p-5 rounded-2xl border border-white/5">
+                    <p class="text-white font-bold text-lg mb-1">📞 WhatsApp / Message</p>
+                    <p class="text-sky-200/70">Personal & Instant</p>
+                  </div>
+                  <div class="bg-white/5 p-5 rounded-2xl border border-white/5">
+                    <p class="text-white font-bold text-lg mb-1">📧 Email Submission</p>
+                    <p class="text-sky-200/70">Detailed & Reflective</p>
+                  </div>
+                </div>
+                <p class="mt-8 text-white bg-sky-600/20 p-4 rounded-xl border-l-4 border-sky-400 font-semibold text-lg">
+                  ⌛ Response Time: 24 – 48 Hours for your 30-minute personal session.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-card group">
+          <div
+            class="bg-[#0b142d] border-2 border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:border-indigo-400 hover:shadow-[0_0_50px_rgba(129,140,248,0.2)]">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div class="bg-indigo-500 text-white px-6 py-2 rounded-full font-black text-xl tracking-tighter shrink-0">
+                STEP 02</div>
+              <div>
+                <h4 class="text-3xl md:text-4xl font-bold text-white mb-6">Extended Consultation</h4>
+                <p class="text-indigo-200 text-xl md:text-2xl leading-relaxed font-medium">
+                  If you feel you need <span class="text-white font-bold">more time</span> or a <span
+                    class="text-white font-bold">deeper explanation</span>, you can choose the Extended Option.
+                </p>
+                <p class="text-indigo-100/60 mt-4 text-lg">Speak for more than 30 minutes for continued prayer support
+                  and clarity. (Separate payment applies).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-card group">
+          <div
+            class="bg-[#0b142d] border-2 border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:border-sky-300 hover:shadow-[0_0_50px_rgba(125,211,252,0.2)]">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div
+                class="bg-sky-300 text-[#020617] px-6 py-2 rounded-full font-black text-xl tracking-tighter shrink-0">
+                STEP 03</div>
+              <div>
+                <h4 class="text-3xl md:text-4xl font-bold text-white mb-6">Spiritual Remedies</h4>
+                <p class="text-sky-200 text-xl md:text-2xl leading-relaxed font-medium">
+                  We may recommend <span class="text-white font-bold">Specific Prayers</span>, faith-based steps, or
+                  spiritual materials.
+                </p>
+                <p class="text-sky-100/60 mt-4 text-lg italic">
+                  This step is completely <span class="text-sky-300 font-bold uppercase">Optional</span>—only if you
+                  choose to proceed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div
+        class="mt-20 bg-white p-10 rounded-[3rem] text-center shadow-[0_20px_60px_rgba(56,189,248,0.3)] animate-bounce-slow">
+        <p class="text-[#020617] text-2xl md:text-3xl font-bold mb-2 italic font-['Baskervville']">
+          "All conversations are 100% confidential."
+        </p>
+        <p class="text-sky-700 font-bold tracking-widest text-sm uppercase">Sincerity • Prayer • Care</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 6th content -->
+
+  <section class="py-28 bg-[#020617] overflow-hidden font-['Outfit']">
+
+    <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+      <h2 class="text-sky-400 font-bold tracking-[0.4em] uppercase text-xs mb-3">Heartfelt Experiences</h2>
+      <h3 class="text-5xl md:text-6xl font-['Baskervville'] text-white italic">What Seekers Say</h3>
+    </div>
+
+    <div class="relative flex overflow-hidden">
+
+      <div class="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#020617] to-transparent z-20"></div>
+      <div class="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#020617] to-transparent z-20"></div>
+
+      <div class="flex animate-infinite-scroll hover:[animation-play-state:paused] cursor-grab">
+
+        <div class="flex gap-8 px-4">
+          <div class="w-[450px] bg-[#0b142d] border-2 border-white/10 p-10 rounded-[3rem] shadow-2xl shrink-0">
+            <div class="flex gap-1 mb-6 text-yellow-400 text-xl">★★★★★</div>
+            <p class="text-white text-2xl leading-relaxed mb-10 font-light">
+              “I was going through deep emotional pain. After the session, I felt <span
+                class="text-sky-400 font-bold">clarity and peace</span>. Within weeks, my situation improved.”
+            </p>
+            <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+              <div class="w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center font-bold text-[#020617]">
+                AK</div>
+              <span class="text-white font-bold text-lg">Aisha K.</span>
+            </div>
+          </div>
+
+          <div class="w-[450px] bg-[#0b142d] border-2 border-white/10 p-10 rounded-[3rem] shadow-2xl shrink-0">
+            <div class="flex gap-1 mb-6 text-yellow-400 text-xl">★★★★★</div>
+            <p class="text-white text-2xl leading-relaxed mb-10 font-light">
+              “Facing career blockage and stress was hard. The advice was <span class="text-sky-400 font-bold">very
+                accurate</span>. I am now in a much better position.”
+            </p>
+            <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+              <div class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-white">JD
+              </div>
+              <span class="text-white font-bold text-lg">John D.</span>
+            </div>
+          </div>
+
+          <div class="w-[450px] bg-[#0b142d] border-2 border-white/10 p-10 rounded-[3rem] shadow-2xl shrink-0">
+            <div class="flex gap-1 mb-6 text-yellow-400 text-xl">★★★★★</div>
+            <p class="text-white text-2xl leading-relaxed mb-10 font-light">
+              “The guidance was honest and <span class="text-sky-400 font-bold">spiritually powerful</span>. I followed
+              the steps and slowly things started changing.”
+            </p>
+            <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+              <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center font-bold text-[#020617]">
+                RS</div>
+              <span class="text-white font-bold text-lg">Rahman S.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-8 px-4" aria-hidden="true">
+          <div class="w-[450px] bg-[#0b142d] border-2 border-white/10 p-10 rounded-[3rem] shadow-2xl shrink-0">
+            <div class="flex gap-1 mb-6 text-yellow-400 text-xl">★★★★★</div>
+            <p class="text-white text-2xl leading-relaxed mb-10 font-light">
+              “I was going through deep emotional pain. After the session, I felt <span
+                class="text-sky-400 font-bold">clarity and peace</span>. Within weeks, my situation improved.”
+            </p>
+            <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+              <div class="w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center font-bold text-[#020617]">
+                AK</div>
+              <span class="text-white font-bold text-lg">Aisha K.</span>
+            </div>
+          </div>
+
+          <div class="w-[450px] bg-[#0b142d] border-2 border-white/10 p-10 rounded-[3rem] shadow-2xl shrink-0">
+            <div class="flex gap-1 mb-6 text-yellow-400 text-xl">★★★★★</div>
+            <p class="text-white text-2xl leading-relaxed mb-10 font-light">
+              “Facing career blockage and stress was hard. The advice was <span class="text-sky-400 font-bold">very
+                accurate</span>. I am now in a much better position.”
+            </p>
+            <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+              <div class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-white">JD
+              </div>
+              <span class="text-white font-bold text-lg">John D.</span>
+            </div>
+          </div>
+
+          <div class="w-[450px] bg-[#0b142d] border-2 border-white/10 p-10 rounded-[3rem] shadow-2xl shrink-0">
+            <div class="flex gap-1 mb-6 text-yellow-400 text-xl">★★★★★</div>
+            <p class="text-white text-2xl leading-relaxed mb-10 font-light">
+              “The guidance was honest and <span class="text-sky-400 font-bold">spiritually powerful</span>. I followed
+              the steps and slowly things started changing.”
+            </p>
+            <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+              <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center font-bold text-[#020617]">
+                RS</div>
+              <span class="text-white font-bold text-lg">Rahman S.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- last -->
+  <section class="relative py-24 bg-[#010a1a] overflow-hidden px-6 font-['Plus_Jakarta_Sans']">
+
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-sky-500/10 blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <div class="space-y-10 reveal-left">
+          <div>
+            <h2 class="text-sky-400 font-bold tracking-[0.3em] uppercase text-xs mb-4">Get in Touch</h2>
+            <h3 class="text-5xl md:text-7xl font-['Baskervville'] text-white italic mb-6">Contact Us</h3>
+            <p class="text-white text-xl leading-relaxed font-light opacity-90">
+              If you feel ready to share your concerns, we are here to listen with <span
+                class="text-sky-400 font-semibold italic">care, confidentiality, and faith.</span> Reach out without
+              fear or hesitation.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:border-sky-400/50 transition-colors">
+              <p class="text-sky-400 font-bold text-sm uppercase tracking-widest mb-2">Email Directly</p>
+              <p class="text-white text-lg font-semibold">yourname@email.com</p>
+            </div>
+            <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:border-sky-400/50 transition-colors">
+              <p class="text-sky-400 font-bold text-sm uppercase tracking-widest mb-2">WhatsApp</p>
+              <p class="text-white text-lg font-semibold">+91 XXXXX XXXXX</p>
+            </div>
+          </div>
+
+          <div class="p-8 bg-sky-500/5 border-l-4 border-sky-400 rounded-r-3xl space-y-4">
+            <div class="flex items-center gap-4">
+              <span class="text-2xl">🕊️</span>
+              <div>
+                <p class="text-white font-bold text-lg">Available Hours</p>
+                <p class="text-sky-200/60">Mon – Sat | 10:00 AM – 6:30 PM</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-2xl">⏳</span>
+              <div>
+                <p class="text-white font-bold text-lg">Response Time</p>
+                <p class="text-sky-200/60">Replies within 24–48 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 pt-4">
+            <span class="text-sky-100/40 text-sm uppercase font-bold tracking-widest">Follow Us</span>
+            <div class="flex gap-4">
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-all text-white">IG</a>
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-all text-white">FB</a>
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-all text-white">YT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <form class="bg-[#0b142d] border border-white/10 p-8 md:p-12 rounded-[3rem] shadow-2xl space-y-6">
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-sky-300 text-sm font-bold ml-2 uppercase tracking-widest">Full Name</label>
+                <input type="text" placeholder="Your Name"
+                  class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-sky-400 transition-all">
+              </div>
+              <div class="space-y-2">
+                <label class="text-sky-300 text-sm font-bold ml-2 uppercase tracking-widest">Email Address</label>
+                <input type="email" placeholder="email@example.com"
+                  class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-sky-400 transition-all">
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sky-300 text-sm font-bold ml-2 uppercase tracking-widest">Category of Help</label>
+              <select
+                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-sky-400 transition-all appearance-none">
+                <option class="bg-[#0b142d]">Relationship Struggles</option>
+                <option class="bg-[#0b142d]">Career & Growth</option>
+                <option class="bg-[#0b142d]">Anxiety & Peace</option>
+                <option class="bg-[#0b142d]">Family Conflicts</option>
+              </select>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sky-300 text-sm font-bold ml-2 uppercase tracking-widest">Your Concern / Prayer
+                Request</label>
+              <textarea rows="5" placeholder="Please describe your situation clearly..."
+                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-sky-400 transition-all resize-none"></textarea>
+            </div>
+
+            <button
+              class="w-full py-5 bg-sky-500 hover:bg-white text-[#010a1a] font-black rounded-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(56,189,248,0.3)] active:scale-95 uppercase tracking-widest">
+              Submit Your Message
+            </button>
+
+            <p class="text-center text-white/30 text-xs">Every message is read with care and prayerful attention.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+<section class="relative min-h-screen flex items-center justify-center px-6 py-20 bg-slate-50 overflow-hidden font-['Plus_Jakarta_Sans']">
+  
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-sky-200/50 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute top-1/2 -left-24 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[100px]"></div>
+      <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-sky-300/20 rounded-full blur-[80px]"></div>
+    </div>
+  
+    <div class="max-w-7xl mx-auto w-full relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-12 order-2 lg:order-1">
+          
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="px-4 py-1.5 rounded-full bg-sky-100 text-sky-600 text-xs font-bold tracking-widest uppercase">
+                Spiritual Pathfinders
+              </span>
+              <div class="h-[1px] flex-grow bg-gradient-to-r from-sky-200 to-transparent"></div>
+            </div>
+            
+            <h1 class="text-7xl md:text-8xl font-serif text-slate-900 leading-tight">
+              Who We <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-600 italic">Are</span>
+            </h1>
+          </div>
+  
+          <div class="space-y-6 text-slate-600 text-lg md:text-xl leading-relaxed max-w-xl">
+            <p class="font-light">
+              We are a faith-based spiritual guidance service dedicated to helping people navigate through 
+              <span class="text-slate-900 font-semibold border-b-2 border-sky-200">difficulties, confusion, or emotional pain.</span>
+            </p>
+  
+            <div class="relative p-10 rounded-[2.5rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-xl shadow-sky-500/5">
+               <div class="absolute -top-4 -left-4 w-12 h-12 bg-sky-500 rounded-2xl flex items-center justify-center shadow-lg shadow-sky-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  </svg>
+               </div>
+               <p class="italic font-serif text-2xl text-slate-800 leading-snug">
+                "When life feels heavy, you don’t have to face it alone. We listen without judgment."
+               </p>
+            </div>
+  
+            <div class="flex flex-wrap gap-4 items-center pt-4">
+              <span class="text-xs font-black tracking-tighter text-sky-400 uppercase">Guided by</span>
+              <div class="px-6 py-2 rounded-full border border-sky-100 bg-white text-sky-600 font-bold text-sm shadow-sm hover:shadow-md transition-shadow">
+                HOLY BIBLE
+              </div>
+              <div class="px-6 py-2 rounded-full border border-sky-100 bg-white text-sky-600 font-bold text-sm shadow-sm hover:shadow-md transition-shadow">
+                HOLY QUR’AN
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="lg:col-span-6 order-1 lg:order-2">
+          <div class="relative grid grid-cols-12 grid-rows-12 h-[500px] md:h-[650px] gap-4">
+            
+            <div class="col-start-1 col-end-9 row-start-1 row-end-10 rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white transform -rotate-2 hover:rotate-0 transition-transform duration-700">
+              <img src="assests/mixed.png" class="w-full h-full object-cover" alt="Reflection">
+            </div>
+  
+            <div class="col-start-6 col-end-13 row-start-6 row-end-13 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform rotate-3 hover:rotate-0 transition-transform duration-700 z-20">
+              <img src="assests/whoweare.png" class="w-full h-full object-cover" alt="Support">
+            </div>
+  
+            <div class="absolute -top-10 -right-4 w-32 h-32 z-30 animate-bounce transition-all duration-[3000ms]">
+              <img src="assests/angel.png" class="w-full h-full object-contain" alt="Angel Icon">
+            </div>
+  
+            <div class="absolute bottom-10 left-0 w-24 h-24 bg-gradient-to-tr from-sky-400 to-blue-600 rounded-3xl rotate-12 -z-10 opacity-20 blur-sm"></div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+    
+    .font-serif { font-family: 'Baskervville', serif; }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(5deg); }
+      50% { transform: translateY(-20px) rotate(-5deg); }
+    }
+    .animate-bounce {
+      animation: bounce 6s ease-in-out infinite;
+    }
+  </style>

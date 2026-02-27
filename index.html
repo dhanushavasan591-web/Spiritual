@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Spiritual Guidance</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Fade Up Animation */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeUp {
+      animation: fadeUp 1s ease-out forwards;
+    }
+
+    /* Angel Flying Animation */
+    @keyframes fly {
+      0% {
+        transform: translateY(0px) translateX(0px);
+      }
+
+      25% {
+        transform: translateY(-20px) translateX(10px);
+      }
+
+      50% {
+        transform: translateY(0px) translateX(20px);
+      }
+
+      75% {
+        transform: translateY(-15px) translateX(10px);
+      }
+
+      100% {
+        transform: translateY(0px) translateX(0px);
+      }
+    }
+
+    .animate-fly {
+      animation: fly 6s ease-in-out infinite;
+    }
+  </style>
+  <!-- 2nd content  -->
+  <style>
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .animate-float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    /* Active classes applied by JavaScript */
+    .is-visible {
+      opacity: 1 !important;
+      transform: translate(0, 0) !important;
+    }
+  </style>
+  <!-- 3rd content -->
+  <style>
+    /* Floating Animation */
+    @keyframes spiritFloatCard {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .spirit-card-entry {
+      animation: spiritFloatCard 4s ease-in-out infinite;
+      transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .spirit-card-entry:hover {
+      transform: scale(1.05) translateY(-12px);
+      box-shadow: 0 20px 60px -15px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Shine Effect */
+    .spirit-group {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2.5rem;
+    }
+
+    .spirit-group::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(600px circle at var(--x) var(--y),
+          rgba(56, 189, 248, 0.15),
+          transparent 40%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .spirit-group:hover::after {
+      opacity: 1;
+    }
+  </style>
+  <!-- 4th contetn -->
+  <style>
+    /* Card Initial Hidden State */
+    .card-hidden {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+
+    /* Card Visible Animation */
+    .card-show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s cubic-bezier(.17, .67, .83, .67);
+    }
+  </style>
+  <!-- 5th session -->
+  <style>
+    @keyframes infinite-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+    .animate-infinite-scroll {
+      animation: infinite-scroll 40s linear infinite;
+    }
+  </style>
+  <!-- lastsesstin -->
+  <style>
+    /* Entrance Animations */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .reveal-left {
+      animation: slideInLeft 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    }
+
+    .reveal-right {
+      animation: slideInRight 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    }
+
+    /* Custom Select Style */
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.5rem center;
+      background-size: 1.2rem;
+    }
+  </style>
+  <!-- 6th session -->
+  <style>
+    /* The Key to Infinite Loop: Move from 0% to -50% 
+       because the content is duplicated twice */
+    @keyframes infiniteScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-infinite-scroll {
+      animation: infiniteScroll 30s linear infinite;
+    }
+
+    /* To ensure cards don't shrink and stay readable */
+    .shrink-0 {
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="absolute top-0 left-0 w-full z-30 bg-black/30 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between text-white">
+      <!-- Logo -->
+      <div class="text-xl md:text-2xl font-bold tracking-wide">
+        FaithGuide
+      </div>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-8 text-lg">
+        <li><a href="#home" class="hover:text-yellow-300 transition">Home</a></li>
+        <li><a href="#whoweare" class="hover:text-yellow-300 transition">Who we are</a></li>
+        <li><a href="#howitworks" class="hover:text-yellow-300 transition">How It Works</a></li>
+        <li><a href="#payment" class="hover:text-yellow-300 transition">Payment Method</a></li>
+        <li><a href="#testimonals" class="hover:text-yellow-300 transition">Testimonals</a></li>
+        <li><a href="#contact" class="hover:text-yellow-300 transition">Contact</a></li>
+      </ul>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-2xl focus:outline-none">
+          ☰
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-black/80 text-white px-6 pb-6">
+      <ul class="space-y-4 text-lg">
+        <li><a href="#" class="block hover:text-yellow-300">Home</a></li>
+        <li><a href="#" class="block hover:text-yellow-300">About</a></li>
+        <li><a href="#" class="block hover:text-yellow-300">Services</a></li>
+        <li><a href="#" class="block hover:text-yellow-300">Testimonials</a></li>
+        <li><a href="#" class="block hover:text-yellow-300">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- HERO SECTION -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center px-6 md:px-16 bg-cover bg-center"
+    style="background-image: url('assests/herosection1.png');">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <!-- Flying Angel Image -->
+    <!-- <img
+        src="assests/angel.png"
+        alt="Angel"
+        class="absolute top-10 left-4 md:left-20 w-24 sm:w-32 md:w-40 animate-fly z-10" /> -->
+    <!-- Content -->
+    <div class="relative z-20 max-w-3xl text-center animate-fadeUp text-white">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+        Confidential Spiritual Guidance
+        <span class="text-yellow-300">for Your Life’s Challenges</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl">
+        Share your worries. Receive faith-based guidance rooted in Islam and
+        Christianity.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+          🟢 Share Your Problem
+        </button>
+        <button
+          class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+          🔵 Book a Private Session
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- 2nd section -->
+  <section id="spiritual-section"
+    class="relative min-h-screen flex items-center px-4 md:px-12 py-20 bg-[#fcfdfe] overflow-hidden font-['Plus_Jakarta_Sans'] transition-all duration-1000 opacity-0 translate-y-10">
+
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-sky-50/50 to-transparent"></div>
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-50 rounded-full blur-[100px] opacity-60"></div>
+
+    <div class="max-w-7xl mx-auto w-full relative z-10">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+
+        <div id="image-container"
+          class="relative group transition-all duration-1000 delay-300 -translate-x-20 opacity-0">
+          <div
+            class="relative z-20 rounded-2xl overflow-hidden shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] border-8 border-white">
+            <img src="assests/mixed.png" class="w-full h-[550px] object-cover" alt="Spiritual Reflection">
+          </div>
+
+          <div
+            class="absolute -bottom-10 -right-10 z-30 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-sky-100 max-w-[280px] hidden md:block">
+            <div class="flex gap-3 mb-4">
+              <img src="assests/kuran.png" class="w-16 h-16 rounded-lg object-cover shadow-inner" alt="Guidance">
+              <div class="flex flex-col justify-center">
+                <span class="text-[10px] uppercase tracking-widest text-sky-500 font-bold">Foundational</span>
+                <span class="text-sm font-semibold text-slate-800">Holy
+                  Wisdom</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 leading-relaxed">Integrating
+              timeless principles from the Bible and Qur’an for modern
+              clarity.</p>
+          </div>
+
+          <div class="absolute -top-12 -left-8 z-30 animate-float">
+            <div class="bg-white p-4 rounded-full shadow-lg border border-sky-50">
+              <img src="assests/angel.png" class="w-12 h-12" alt="Angel">
+            </div>
+          </div>
+        </div>
+
+        <div id="text-content" class="space-y-8 transition-all duration-1000 delay-500 translate-x-20 opacity-0">
+          <div class="space-y-4">
+            <div class="inline-flex items-center space-x-2 text-sky-600">
+              <span class="h-[2px] w-8 bg-sky-500"></span>
+              <span class="text-xs font-bold uppercase tracking-[0.3em]">Our
+                Mission</span>
+            </div>
+
+            <h2 class="text-5xl md:text-6xl font-light text-slate-900 leading-tight">
+              Compassionate <br />
+              <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-800">Spiritual
+                Guidance</span>
+            </h2>
+          </div>
+
+          <div class="space-y-6 text-slate-600 text-lg">
+            <p class="leading-relaxed">
+              We operate at the intersection of faith and emotional
+              well-being. Our service is designed for those seeking a <span
+                class="text-slate-900 font-medium">structured, prayerful
+                approach</span> to overcoming life's most complex transitions.
+            </p>
+
+            <div class="border-l-4 border-sky-500 pl-8 py-2">
+              <p class="text-xl italic text-slate-800 font-serif">
+                "Providing a sanctuary for the confused and a voice of hope for the weary."
+              </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 pt-6">
+              <div class="p-4 rounded-xl bg-sky-50/50 border border-sky-100">
+                <h4 class="text-sm font-bold text-sky-900 mb-1 uppercase tracking-tighter">Bible
+                  Based</h4>
+                <p class="text-xs text-sky-700/70 uppercase font-medium">Scriptural
+                  Insights</p>
+              </div>
+              <div class="p-4 rounded-xl bg-sky-50/50 border border-sky-100">
+                <h4 class="text-sm font-bold text-sky-900 mb-1 uppercase tracking-tighter">Qur'an
+                  Based</h4>
+                <p class="text-xs text-sky-700/70 uppercase font-medium">Divine
+                  Revelation</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 pt-4">
+            <button
+              class="px-8 py-4 bg-sky-600 text-white rounded-full font-bold shadow-lg shadow-sky-200 hover:bg-sky-700 hover:-translate-y-1 transition-all duration-300">
+              Begin Your Journey
+            </button>
+            <a href="#"
+              class="text-sm font-bold text-slate-400 hover:text-sky-600 transition-colors flex items-center gap-2">
+              View Our Process
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- 3rd section -->
+  <section class="relative py-24 overflow-hidden px-6 font-['Plus_Jakarta_Sans']
+  bg-gradient-to-br from-[#020617] via-[#071226] to-[#0a1f3d]">
+
+    <!-- Background Glow -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-[-200px] left-[-200px] w-[600px] h-[600px] 
+        bg-sky-500/20 rounded-full blur-[140px] animate-pulse"></div>
+
+      <div class="absolute bottom-[-200px] right-[-200px] w-[600px] h-[600px] 
+        bg-blue-500/20 rounded-full blur-[140px] animate-pulse delay-1000"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+
+      <!-- Heading -->
+      <div class="text-center mb-24">
+        <h2 class="text-5xl md:text-7xl font-['Baskervville'] italic text-white mb-6">
+          How it Works
+        </h2>
+        <div class="h-[2px] w-24 bg-gradient-to-r from-transparent via-sky-400 to-transparent mx-auto"></div>
+      </div>
+
+      <!-- Cards -->
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <!-- Card 1 -->
+        <div class="spirit-card-entry spirit-group rounded-[2.5rem]">
+          <div class="p-10 bg-white/5 border border-white/10 backdrop-blur-xl rounded-[2.5rem]">
+
+            <div
+              class="w-16 h-16 rounded-2xl bg-sky-500/20 flex items-center justify-center mb-8 border border-sky-400/30">
+              <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Concern Received</h3>
+            <p class="text-sky-100/60 leading-relaxed italic">
+              Once your concern is received, it is carefully reviewed with
+              sincere prayer and thoughtful understanding.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="spirit-card-entry spirit-group rounded-[2.5rem]">
+          <div class="p-10 bg-white/5 border border-white/10 backdrop-blur-xl rounded-[2.5rem]">
+
+            <div
+              class="w-16 h-16 rounded-2xl bg-sky-500/20 flex items-center justify-center mb-8 border border-sky-400/30">
+              <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Spiritual Reflection</h3>
+            <p class="text-sky-100/60 leading-relaxed italic">
+              Each situation is approached with patience and faith, seeking
+              wisdom and clarity before offering guidance.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="spirit-card-entry spirit-group rounded-[2.5rem]">
+          <div class="p-10 bg-white/5 border border-white/10 backdrop-blur-xl rounded-[2.5rem]">
+
+            <div
+              class="w-16 h-16 rounded-2xl bg-sky-500/20 flex items-center justify-center mb-8 border border-sky-400/30">
+              <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Grounded Guidance</h3>
+            <p class="text-sky-100/60 leading-relaxed italic">
+              Ensuring the response you receive is meaningful, responsible,
+              and spiritually grounded.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- 4th content -->
+  <section class="relative py-28 bg-white overflow-hidden px-6 font-['Space_Grotesk']">
+
+    <!-- Glow Effects -->
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-sky-200 rounded-full blur-[150px] opacity-40"></div>
+    <div class="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-blue-200 rounded-full blur-[150px] opacity-40">
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+
+      <!-- Heading -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+        <div>
+          <h2 class="text-5xl md:text-7xl font-['Playfair_Display'] text-slate-900 italic leading-none mb-4">
+            Areas of <span class="text-sky-500">Support</span>
+          </h2>
+          <p class="text-sky-500/60 tracking-[0.4em] uppercase text-xs font-bold">
+            Select a category to begin
+          </p>
+        </div>
+        <div class="h-[1px] flex-grow bg-gradient-to-r from-sky-300 to-transparent ml-10 hidden md:block"></div>
+      </div>
+
+      <!-- Cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Card 1 -->
+        <div class="group animate-card card-hidden">
+          <div class="relative h-full bg-white border border-sky-100 p-10 rounded-2xl 
+                    shadow-sm hover:-translate-y-4 transition-all duration-500
+                    hover:shadow-[0_20px_60px_-15px_rgba(56,189,248,0.4)]">
+
+            <span class="text-sky-100 text-6xl font-bold absolute top-4 right-6">01</span>
+
+            <div class="mb-10 text-3xl">💔</div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-6">
+              Relationship<br />Struggles
+            </h3>
+            <p class="text-slate-600">
+              Guidance for marriage, misunderstandings, and emotional healing
+              to restore harmony.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group animate-card card-hidden">
+          <div class="relative h-full bg-white border border-sky-100 p-10 rounded-2xl 
+                    shadow-sm hover:-translate-y-4 transition-all duration-500
+                    hover:shadow-[0_20px_60px_-15px_rgba(99,102,241,0.4)]">
+
+            <span class="text-indigo-100 text-6xl font-bold absolute top-4 right-6">02</span>
+
+            <div class="mb-10 text-3xl">💼</div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-6">
+              Career &<br />Growth
+            </h3>
+            <p class="text-slate-600">
+              Break through financial blocks and job stress with spiritual
+              direction and clarity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group animate-card card-hidden">
+          <div class="relative h-full bg-white border border-sky-100 p-10 rounded-2xl 
+                    shadow-sm hover:-translate-y-4 transition-all duration-500
+                    hover:shadow-[0_20px_60px_-15px_rgba(56,189,248,0.4)]">
+
+            <span class="text-sky-100 text-6xl font-bold absolute top-4 right-6">03</span>
+
+            <div class="mb-10 text-3xl">🧠</div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-6">
+              Anxiety &<br />Peace
+            </h3>
+            <p class="text-slate-600">
+              Quiet the mind and remove negative energy through deep,
+              faith-based reflection.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group animate-card card-hidden">
+          <div class="relative h-full bg-white border border-sky-100 p-10 rounded-2xl 
+                    shadow-sm hover:-translate-y-4 transition-all duration-500
+                    hover:shadow-[0_20px_60px_-15px_rgba(37,99,235,0.4)]">
+
+            <span class="text-blue-100 text-6xl font-bold absolute top-4 right-6">04</span>
+
+            <div class="mb-10 text-3xl">👨‍👩‍👧</div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-6">
+              Family<br />Conflicts
+            </h3>
+            <p class="text-slate-600">
+              Resolve household tensions and bring harmony back to your
+              personal connections.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- 5th content -->
+  <section class="relative py-28 bg-[#ffffff] overflow-hidden px-6 font-['Outfit']">
+    <div
+      class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-sky-50/40 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2">
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-indigo-50/30 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2">
+    </div>
+
+    <div class="max-w-6xl mx-auto relative">
+
+      <div class="text-center mb-20">
+        <span
+          class="inline-block px-4 py-1 mb-4 text-[10px] font-bold tracking-[0.3em] uppercase text-sky-600 bg-sky-50 rounded-full border border-sky-100">
+          Professional Guidance
+        </span>
+        <h2 class="text-5xl md:text-6xl font-light text-slate-900 mb-6 font-['Baskervville']">
+          Consultation <span class="italic font-normal">Options</span>
+        </h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+          Select the level of support that best fits your current spiritual journey.
+          All sessions are conducted with complete <span class="text-slate-800 font-medium">confidentiality</span>.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div
+          class="group relative bg-white border border-slate-100 p-10 rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-sky-100 hover:-translate-y-2">
+          <div class="absolute top-6 right-8">
+            <span
+              class="px-3 py-1 bg-sky-50 text-sky-600 text-[10px] font-bold uppercase tracking-widest rounded-full">30
+              Mins</span>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="text-xl font-bold text-slate-900 mb-2">Initial Guidance</h4>
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-['Baskervville'] font-bold text-slate-900">₹1,000</span>
+              <span class="text-slate-400 text-sm italic">per session</span>
+            </div>
+          </div>
+
+          <p class="text-slate-500 text-sm leading-relaxed mb-8 font-light">
+            A focused session via WhatsApp or Email to address your immediate concerns and provide clarity.
+          </p>
+
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-center gap-3 text-sm text-slate-600">
+              <span
+                class="w-5 h-5 flex items-center justify-center bg-sky-100 text-sky-600 rounded-full text-[10px]">✓</span>
+              Personal Care
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-600">
+              <span
+                class="w-5 h-5 flex items-center justify-center bg-sky-100 text-sky-600 rounded-full text-[10px]">✓</span>
+              24-48h Response
+            </li>
+          </ul>
+
+          <button
+            class="w-full py-4 bg-slate-900 text-white rounded-2xl text-sm font-bold tracking-widest hover:bg-sky-600 transition-colors duration-300">
+            START CONSULTATION
+          </button>
+        </div>
+
+        <div
+          class="group relative bg-[#f0f9ff] border border-sky-100 p-10 rounded-[2.5rem] shadow-[0_20px_50px_-15px_rgba(14,165,233,0.15)] transition-all duration-500 hover:-translate-y-2">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <span
+              class="px-4 py-1.5 bg-sky-500 text-white text-[10px] font-bold uppercase tracking-widest rounded-full shadow-lg shadow-sky-200">Most
+              Requested</span>
+          </div>
+
+          <div class="mb-8 mt-2">
+            <h4 class="text-xl font-bold text-slate-900 mb-2">Deep Consultation</h4>
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-['Baskervville'] font-bold text-sky-600">Extra Amount</span>
+            </div>
+            <p class="text-sky-600/60 text-[10px] font-bold uppercase mt-1 italic tracking-tighter">+ In-depth Session
+            </p>
+          </div>
+
+          <p class="text-slate-600 text-sm leading-relaxed mb-8 font-medium">
+            Choose this if you require deeper spiritual mapping, prayer support, and extended time for explanation.
+          </p>
+
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+              <span
+                class="w-5 h-5 flex items-center justify-center bg-sky-500 text-white rounded-full text-[10px]">✓</span>
+              Extended Time
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+              <span
+                class="w-5 h-5 flex items-center justify-center bg-sky-500 text-white rounded-full text-[10px]">✓</span>
+              Deep Prayer Support
+            </li>
+          </ul>
+
+          <button
+            class="w-full py-4 bg-sky-500 text-white rounded-2xl text-sm font-bold tracking-widest hover:bg-sky-600 transition-colors duration-300 shadow-lg shadow-sky-200">
+            CHOOSE DEEP DIVE
+          </button>
+        </div>
+
+        <div
+          class="group relative bg-white border border-slate-100 p-10 rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-emerald-100 hover:-translate-y-2">
+          <div class="absolute top-6 right-8">
+            <span
+              class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Optional</span>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="text-xl font-bold text-slate-900 mb-2">Spiritual Remedies</h4>
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-['Baskervville'] font-bold text-slate-900">As Guided</span>
+            </div>
+          </div>
+
+          <p class="text-slate-500 text-sm leading-relaxed mb-8 font-light">
+            Specific faith-based actions, customized prayers, or spiritual steps tailored to your situation.
+          </p>
+
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-center gap-3 text-sm text-slate-600">
+              <span
+                class="w-5 h-5 flex items-center justify-center bg-emerald-100 text-emerald-600 rounded-full text-[10px]">✓</span>
+              Faith-based Steps
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-600">
+              <span
+                class="w-5 h-5 flex items-center justify-center bg-emerald-100 text-emerald-600 rounded-full text-[10px]">✓</span>
+              Customized Approach
+            </li>
+          </ul>
+
+          <button
+            class="w-full py-4 border-2 border-slate-100 text-slate-400 rounded-2xl text-sm font-bold tracking-widest cursor-default">
+            LEARN MORE
+          </button>
+        </div>
+
+      </div>
+
+      <div class="mt-20 pt-10 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-8">
+          <span class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.2em]">Confidential</span>
+          <span class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.2em]">Sincere Care</span>
+          <span class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.2em]">Professional</span>
+        </div>
+        <p class="text-slate-400 text-sm italic font-['Baskervville']">"Your spiritual well-being is our highest
+          commitment."</p>
+      </div>
+
+    </div>
+  </section>
+  <!-- 6th content -->
+  <section class="relative py-28 bg-[#ffffff] overflow-hidden font-['Outfit']">
+    <div
+      class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-sky-50/40 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2">
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-indigo-50/30 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2">
+    </div>
+    <div class="max-w-7xl mx-auto px-6 mb-16 text-center relative z-10">
+      <h2 class="text-sky-500 font-bold tracking-[0.4em] uppercase text-xs mb-3">Heartfelt Experiences</h2>
+      <h3 class="text-5xl md:text-6xl font-['Baskervville'] text-slate-900 italic">What Seekers Say</h3>
+    </div>
+
+    <div class="relative flex overflow-hidden">
+
+      <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-20"></div>
+      <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-20"></div>
+
+      <div class="flex animate-infinite-scroll hover:[animation-play-state:paused] cursor-grab">
+
+        <div class="flex gap-8 px-4">
+
+          <div
+            class="w-[450px] bg-white border border-slate-100 p-10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] shrink-0 transition-transform duration-500 hover:scale-[1.02]">
+            <div class="flex gap-1 mb-6 text-amber-400 text-lg">★★★★★</div>
+            <p class="text-slate-600 text-2xl leading-relaxed mb-10 font-light">
+              “I was going through deep emotional pain. After the session, I felt
+              <span class="text-sky-500 font-semibold italic underline decoration-sky-100">clarity and peace</span>.
+              Within weeks, my situation improved.”
+            </p>
+            <div class="flex items-center gap-4 border-t border-slate-50 pt-6">
+              <div
+                class="w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center font-bold text-white shadow-lg shadow-sky-100">
+                AK</div>
+              <div>
+                <span class="text-slate-900 font-bold block text-lg leading-none">Aisha K.</span>
+                <span class="text-slate-400 text-xs uppercase tracking-widest mt-1">Verified Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-[450px] bg-white border border-slate-100 p-10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] shrink-0 transition-transform duration-500 hover:scale-[1.02]">
+            <div class="flex gap-1 mb-6 text-amber-400 text-lg">★★★★★</div>
+            <p class="text-slate-600 text-2xl leading-relaxed mb-10 font-light">
+              “Facing career blockage and stress was hard. The advice was
+              <span class="text-sky-500 font-semibold italic underline decoration-sky-100">very accurate</span>.
+              I am now in a much better position.”
+            </p>
+            <div class="flex items-center gap-4 border-t border-slate-50 pt-6">
+              <div
+                class="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center font-bold text-white shadow-lg shadow-slate-200">
+                JD</div>
+              <div>
+                <span class="text-slate-900 font-bold block text-lg leading-none">John D.</span>
+                <span class="text-slate-400 text-xs uppercase tracking-widest mt-1">Verified Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-[450px] bg-white border border-slate-100 p-10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] shrink-0 transition-transform duration-500 hover:scale-[1.02]">
+            <div class="flex gap-1 mb-6 text-amber-400 text-lg">★★★★★</div>
+            <p class="text-slate-600 text-2xl leading-relaxed mb-10 font-light">
+              “The guidance was honest and <span
+                class="text-sky-500 font-semibold italic underline decoration-sky-100">spiritually powerful</span>.
+              I followed the steps and slowly things started changing.”
+            </p>
+            <div class="flex items-center gap-4 border-t border-slate-50 pt-6">
+              <div
+                class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-100">
+                RS</div>
+              <div>
+                <span class="text-slate-900 font-bold block text-lg leading-none">Rahman S.</span>
+                <span class="text-slate-400 text-xs uppercase tracking-widest mt-1">Verified Experience</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex gap-8 px-4" aria-hidden="true">
+          <div
+            class="w-[450px] bg-white border border-slate-100 p-10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] shrink-0">
+            <div class="flex gap-1 mb-6 text-amber-400 text-lg">★★★★★</div>
+            <p class="text-slate-600 text-2xl leading-relaxed mb-10 font-light">“I was going through deep emotional
+              pain...”</p>
+            <div class="flex items-center gap-4 border-t border-slate-50 pt-6">
+              <div class="w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center font-bold text-white">AK
+              </div>
+              <span class="text-slate-900 font-bold text-lg">Aisha K.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.3em]">Pure Intentions • Spiritual Integrity</p>
+    </div>
+
+  </section>
+
+  <!-- last -->
+  <section class="relative py-24 bg-[#010a1a] overflow-hidden px-6 font-['Plus_Jakarta_Sans']">
+
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-sky-500/10 blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <div class="space-y-10 reveal-left">
+          <div>
+            <h2 class="text-sky-400 font-bold tracking-[0.3em] uppercase text-xs mb-4">Get
+              in Touch</h2>
+            <h3 class="text-5xl md:text-7xl font-['Baskervville'] text-white italic mb-6">Contact
+              Us</h3>
+            <p class="text-white text-xl leading-relaxed font-light opacity-90">
+              If you feel ready to share your concerns, we are here to listen
+              with <span class="text-sky-400 font-semibold italic">care,
+                confidentiality, and faith.</span> Reach out without
+              fear or hesitation.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:border-sky-400/50 transition-colors">
+              <p class="text-sky-400 font-bold text-sm uppercase tracking-widest mb-2">Email
+                Directly</p>
+              <p class="text-white text-lg font-semibold">yourname@email.com</p>
+            </div>
+            <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:border-sky-400/50 transition-colors">
+              <p class="text-sky-400 font-bold text-sm uppercase tracking-widest mb-2">WhatsApp</p>
+              <p class="text-white text-lg font-semibold">+91 XXXXX XXXXX</p>
+            </div>
+          </div>
+
+          <div class="p-8 bg-sky-500/5 border-l-4 border-sky-400 rounded-r-3xl space-y-4">
+            <div class="flex items-center gap-4">
+              <span class="text-2xl">🕊️</span>
+              <div>
+                <p class="text-white font-bold text-lg">Available Hours</p>
+                <p class="text-sky-200/60">Mon – Sat | 10:00 AM – 6:30 PM</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-2xl">⏳</span>
+              <div>
+                <p class="text-white font-bold text-lg">Response Time</p>
+                <p class="text-sky-200/60">Replies within 24–48 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 pt-4">
+            <span class="text-sky-100/40 text-sm uppercase font-bold tracking-widest">Follow
+              Us</span>
+            <div class="flex gap-4">
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-all text-white">IG</a>
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-all text-white">FB</a>
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-all text-white">YT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <form class="bg-[#0b142d] border border-white/10 p-8 md:p-12 rounded-[3rem] shadow-2xl space-y-6">
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-sky-300 text-sm font-bold ml-2 uppercase tracking-widest">Full
+                  Name</label>
+                <input type="text" placeholder="Your Name"
+                  class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-sky-400 transition-all">
+              </div>
+              <div class="space-y-2">
+                <label class="text-sky-300 text-sm font-bold ml-2 uppercase tracking-widest">Email
+                  Address</label>
+                <input type="email" placeholder="email@example.com"
+                  class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-sky-400 transition-all">
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sky-300 text-sm font-bold ml-2 uppercase tracking-widest">Category
+                of Help</label>
+              <select
+                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-sky-400 transition-all appearance-none">
+                <option class="bg-[#0b142d]">Relationship Struggles</option>
+                <option class="bg-[#0b142d]">Career & Growth</option>
+                <option class="bg-[#0b142d]">Anxiety & Peace</option>
+                <option class="bg-[#0b142d]">Family Conflicts</option>
+              </select>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sky-300 text-sm font-bold ml-2 uppercase tracking-widest">Your
+                Concern / Prayer
+                Request</label>
+              <textarea rows="5" placeholder="Please describe your situation clearly..."
+                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-sky-400 transition-all resize-none"></textarea>
+            </div>
+
+            <button
+              class="w-full py-5 bg-sky-500 hover:bg-white text-[#010a1a] font-black rounded-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(56,189,248,0.3)] active:scale-95 uppercase tracking-widest">
+              Submit Your Message
+            </button>
+
+            <p class="text-center text-white/30 text-xs">Every message is read
+              with care and prayerful attention.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+  <!-- 2content -->
+  <script>
+    // This script triggers the animation every time the section enters/leaves the screen
+    const observerOptions = {
+      threshold: 0.2 // Triggers when 20% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const section = entry.target;
+        const img = section.querySelector('#image-container');
+        const text = section.querySelector('#text-content');
+
+        if (entry.isIntersecting) {
+          // Focus In: Add visibility classes
+          section.classList.add('is-visible');
+          img.classList.add('is-visible');
+          text.classList.add('is-visible');
+        } else {
+          // Focus Out: Remove classes to reset animation
+          section.classList.remove('is-visible');
+          img.classList.remove('is-visible');
+          text.classList.remove('is-visible');
+        }
+      });
+    }, observerOptions);
+
+    observer.observe(document.getElementById('spiritual-section'));
+  </script>
+  <!-- 3 content -->
+  <script>
+    document.querySelectorAll('.spirit-group').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+      });
+    });
+  </script>
+  <!-- 4thcontent -->
+  <!-- Scroll Trigger Animation Script -->
+  <script>
+    const cards = document.querySelectorAll(".animate-card");
+
+    const observers = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.remove("card-hidden");
+              entry.target.classList.add("card-show");
+            }, index * 150); // stagger effect
+          } else {
+            entry.target.classList.remove("card-show");
+            entry.target.classList.add("card-hidden");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cards.forEach((card) => observers.observe(card));
+  </script>
+</body>
+
+</html>
